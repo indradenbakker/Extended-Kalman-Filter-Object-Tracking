@@ -46,8 +46,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     phi = atan(x_[1] / x_[0]);
     rho_dot = ((x_[0] * x_[2] + x_[1] * x_[3]) / rho);
   } else {
-    phi = 0;
-    rho_dot = 0;
+    phi = rho_dot = 0;
   }
 
   VectorXd z_pred = MatrixXd(3, 1);
